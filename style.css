@@ -1,0 +1,164 @@
+:root {
+      --g4-color: #ff69b4;
+      --val-color: #00bfff;
+      --cyanide-color: #00ffff;
+      --culprit-color: #ffffff; 
+      --lust-color: #cccccc;
+
+      --g4-bg: #330022;
+      --val-bg: #002233;
+      --cyanide-bg: #003333;
+      --culprit-bg: #330000; 
+      --lust-bg: #111111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background: var(--g4-bg);
+      transition: background-color 1.5s ease;
+    }
+
+    .content-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .toggle-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      opacity: 0.7;
+    }
+
+    .toggle-btn.active {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+
+    .section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .section.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    .content-container {
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      max-width: 600px;
+      width: 90%;
+      color: white;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-img {
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-img img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      filter: none;
+    }
+
+    .section.lust .profile-img img {
+      filter: grayscale(100%);
+    }
+
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .discord-tag {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .copyright {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .section.g4 { --theme-color: var(--g4-color); }
+    .section.val { --theme-color: var(--val-color); }
+    .section.cyanide { --theme-color: var(--cyanide-color); }
+    .section.culprit { --theme-color: var(--culprit-color); }
+    .section.lust { --theme-color: var(--lust-color); }
+
+    .toggle-btn[data-index="0"] { background: var(--g4-color); }
+    .toggle-btn[data-index="1"] { background: var(--val-color); }
+    .toggle-btn[data-index="2"] { background: var(--cyanide-color); }
+    .toggle-btn[data-index="3"] { background: red; }
+    .toggle-btn[data-index="4"] { background: var(--lust-color); }
+
+    .section.culprit .content-container {
+      border: 2px solid rgba(255, 0, 0, 0.4);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+      color: white;
+    }
+
+    .section.culprit .profile-img img {
+      border-color: red;
+      box-shadow: 0 0 12px red;
+    }
